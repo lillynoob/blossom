@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Dialog" load_steps=5 format=3 uid="uid://b3biuty0ej0c8"]
+
+[ext_resource type="Resource" uid="uid://bw58v17i08psn" path="res://dialogs/testing/choice1.tres" id="1_2e0nh"]
+[ext_resource type="Script" uid="uid://7gosquon4x85" path="res://dialogs/dialog.gd" id="2_2e0nh"]
+[ext_resource type="Resource" uid="uid://crvhjvnaale64" path="res://dialogs/testing/choice2.tres" id="2_r8y60"]
+[ext_resource type="AudioStream" uid="uid://bog6fimnyucvc" path="res://dialogs/voices/SND_TXT1.wav" id="4_r8y60"]
+
+[resource]
+script = ExtResource("2_2e0nh")
+scene_script = PackedStringArray("Choose between 2 options")
+character_script = [null]
+voice_script = [ExtResource("4_r8y60")]
+is_choice = true
+choices = PackedStringArray("Why...?", "What...?")
+choice_scenes = [ExtResource("1_2e0nh"), ExtResource("2_r8y60")]
+metadata/_custom_type_script = "uid://7gosquon4x85"

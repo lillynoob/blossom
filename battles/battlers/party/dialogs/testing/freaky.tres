@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Dialog" load_steps=6 format=3 uid="uid://cvwtcnbwjynyx"]
+
+[ext_resource type="Texture2D" uid="uid://daxikoxgnird4" path="res://style/susiefaces.png" id="1_svwms"]
+[ext_resource type="Script" uid="uid://7gosquon4x85" path="res://dialogs/dialog.gd" id="2_lq1k3"]
+[ext_resource type="AudioStream" uid="uid://b6kheupphkdrc" path="res://dialogs/voices/snd_txtspam2.wav" id="3_kpvi6"]
+[ext_resource type="AudioStream" uid="uid://ddslmsp8u1xic" path="res://dialogs/voices/snd_txtsus.wav" id="4_yu83k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svwms"]
+atlas = ExtResource("1_svwms")
+region = Rect2(405, 5, 45, 50)
+
+[resource]
+script = ExtResource("2_lq1k3")
+scene_script = PackedStringArray("Kris. WHAT THE [Fifty-Percent Off!] DO YOU MEAN BY [wave amp=50.0 freq=5.0 connected=1][Freaky Farlow][/wave]???", "Kris, actually what the fuck does that mean.", "PLEASE. LEAVE.")
+character_script = [null, SubResource("AtlasTexture_svwms"), null]
+voice_script = [ExtResource("3_kpvi6"), ExtResource("4_yu83k"), ExtResource("3_kpvi6")]
+is_choice = false
+choices = PackedStringArray()
+choice_scenes = []
+metadata/_custom_type_script = "uid://7gosquon4x85"

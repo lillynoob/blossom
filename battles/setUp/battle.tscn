@@ -1,0 +1,283 @@
+[gd_scene load_steps=6 format=3 uid="uid://hpkm4g472nlm"]
+
+[ext_resource type="Script" uid="uid://c432wuc7xi0d6" path="res://battles/setUp/battle.gd" id="1_oxp8w"]
+[ext_resource type="Resource" uid="uid://cwftoiontd03i" path="res://battles/battlers/enemies/potty.tres" id="2_nbr55"]
+[ext_resource type="Script" uid="uid://bas4qbkakdnha" path="res://battles/setUp/character_body_2d.gd" id="3_i431l"]
+[ext_resource type="Script" uid="uid://bwcrgyswaikrp" path="res://battles/setUp/bars.gd" id="3_mt3hq"]
+[ext_resource type="Texture2D" uid="uid://dasm555l6ylhg" path="res://SAMPLE_DO_NOT_USE/field pop.png" id="4_nbr55"]
+
+[node name="battle" type="Node2D"]
+script = ExtResource("1_oxp8w")
+row_count = 3
+space_counts = PackedInt32Array(3, 3, 3, 3, 3, 3)
+party_spawn = [Vector2(0, 0), Vector2(1, 0)]
+enemy_spawn = [Vector3(0, 0, 0), Vector3(1, 1, 0)]
+enemy_list = [ExtResource("2_nbr55")]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="Separator" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 128.0
+offset_top = 128.0
+offset_right = -128.0
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerField" type="VBoxContainer" parent="Control/Separator"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="EnemyField" type="VBoxContainer" parent="Control/Separator"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Buttons" type="MarginContainer" parent="Control"]
+layout_mode = 2
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 64.0
+offset_bottom = 704.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Buttons"]
+layout_mode = 2
+
+[node name="Movement" type="Button" parent="Control/Buttons/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+disabled = true
+text = "M
+o
+v
+e"
+text_overrun_behavior = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Buttons/VBoxContainer/Movement"]
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 48.0
+text = "KEY:
+M"
+
+[node name="Bars" type="MarginContainer" parent="Control"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 16.0
+offset_right = 624.0
+offset_bottom = 112.0
+mouse_filter = 2
+script = ExtResource("3_mt3hq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Bars"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Party1" type="Panel" parent="Control/Bars/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Control/Bars/HBoxContainer/Party1"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 128.0
+offset_bottom = 31.0
+text = "NAME"
+
+[node name="HP" type="ProgressBar" parent="Control/Bars/HBoxContainer/Party1"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 32.0
+offset_right = 128.0
+offset_bottom = 51.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="Control/Bars/HBoxContainer/Party1/HP"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "HP : 20/20"
+
+[node name="MP" type="ProgressBar" parent="Control/Bars/HBoxContainer/Party1"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 64.0
+offset_right = 128.0
+offset_bottom = 83.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="Control/Bars/HBoxContainer/Party1/MP"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "MP : 10/10"
+
+[node name="Party2" type="Panel" parent="Control/Bars/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Control/Bars/HBoxContainer/Party2"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 128.0
+offset_bottom = 31.0
+text = "NAME"
+
+[node name="HP" type="ProgressBar" parent="Control/Bars/HBoxContainer/Party2"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 32.0
+offset_right = 128.0
+offset_bottom = 51.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="Control/Bars/HBoxContainer/Party2/HP"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "HP : 20/20"
+
+[node name="MP" type="ProgressBar" parent="Control/Bars/HBoxContainer/Party2"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 64.0
+offset_right = 128.0
+offset_bottom = 83.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="Control/Bars/HBoxContainer/Party2/MP"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "MP : 10/10"
+
+[node name="Party3" type="Panel" parent="Control/Bars/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Control/Bars/HBoxContainer/Party3"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 128.0
+offset_bottom = 31.0
+text = "NAME"
+
+[node name="HP" type="ProgressBar" parent="Control/Bars/HBoxContainer/Party3"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 32.0
+offset_right = 128.0
+offset_bottom = 51.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="Control/Bars/HBoxContainer/Party3/HP"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "HP : 20/20"
+
+[node name="MP" type="ProgressBar" parent="Control/Bars/HBoxContainer/Party3"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 64.0
+offset_right = 128.0
+offset_bottom = 83.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="Control/Bars/HBoxContainer/Party3/MP"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "MP : 10/10"
+
+[node name="Party4" type="Panel" parent="Control/Bars/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Control/Bars/HBoxContainer/Party4"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 128.0
+offset_bottom = 31.0
+text = "NAME"
+
+[node name="HP" type="ProgressBar" parent="Control/Bars/HBoxContainer/Party4"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 32.0
+offset_right = 128.0
+offset_bottom = 51.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="Control/Bars/HBoxContainer/Party4/HP"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "HP : 20/20"
+
+[node name="MP" type="ProgressBar" parent="Control/Bars/HBoxContainer/Party4"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 64.0
+offset_right = 128.0
+offset_bottom = 83.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="Control/Bars/HBoxContainer/Party4/MP"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "MP : 10/10"
+
+[node name="battleCursor" type="CharacterBody2D" parent="."]
+script = ExtResource("3_i431l")
+
+[node name="PopBg" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(640, 360)
+scale = Vector2(2, 2)
+texture = ExtResource("4_nbr55")
+
+[connection signal="mouse_entered" from="Control" to="battleCursor" method="_on_control_mouse_entered"]
+[connection signal="mouse_exited" from="Control" to="battleCursor" method="_on_control_mouse_exited"]
+[connection signal="pressed" from="Control/Buttons/VBoxContainer/Movement" to="." method="_on_move_pressed"]

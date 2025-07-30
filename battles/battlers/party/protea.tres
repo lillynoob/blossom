@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Battler" load_steps=7 format=3 uid="uid://7pv8ug5qkyas"]
+
+[ext_resource type="PackedScene" uid="uid://bcp01kevobdn0" path="res://rigs/battlers/party/proteaBattlerRig.tscn" id="1_njwhp"]
+[ext_resource type="Script" uid="uid://dxp0ljea0u320" path="res://battles/battlers/battlerResource.gd" id="2_hubtq"]
+[ext_resource type="PackedScene" uid="uid://ni7yeyjxo7yw" path="res://battles/skills/attacks/BASIC_3HAT.tscn" id="3_hubtq"]
+[ext_resource type="PackedScene" uid="uid://c6js8oxhe5ius" path="res://battles/skills/attacks/BASIC_HAT.tscn" id="3_w8p61"]
+[ext_resource type="PackedScene" uid="uid://b2787808aphbh" path="res://battles/skills/attacks/BASIC_SHIELD.tscn" id="4_w8p61"]
+[ext_resource type="PackedScene" uid="uid://qasico5hwn8h" path="res://battles/skills/attacks/BASIC_REVIVE.tscn" id="5_dml0r"]
+
+[resource]
+script = ExtResource("2_hubtq")
+name = "Protea"
+is_enemy = false
+rig = ExtResource("1_njwhp")
+skills = [ExtResource("3_hubtq"), ExtResource("4_w8p61"), ExtResource("5_dml0r"), ExtResource("3_w8p61")]
+MAX_HP = 8
+MAX_MP = 10
+metadata/_custom_type_script = "uid://dxp0ljea0u320"

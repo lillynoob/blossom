@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://i2rtkpwp53pl"]
+
+[ext_resource type="Script" uid="uid://eqx73knegefu" path="res://battles/setUp/row.gd" id="1_7kawq"]
+
+[node name="Row" type="HBoxContainer"]
+size_flags_vertical = 3
+script = ExtResource("1_7kawq")

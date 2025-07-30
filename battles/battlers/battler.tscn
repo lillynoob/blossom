@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://cj85qwv5et86d"]
+
+[ext_resource type="Script" uid="uid://bapyna2vctr0q" path="res://battles/battlers/battler.gd" id="1_xin0r"]
+[ext_resource type="Resource" uid="uid://bra6d7f68cyso" path="res://battles/battlers/party/poppy.tres" id="2_cfb7h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cfb7h"]
+radius = 40.0
+
+[node name="Battler" type="Control"]
+z_index = 3
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_xin0r")
+BattlerResource = ExtResource("2_cfb7h")
+
+[node name="damage_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="damage_area"]
+shape = SubResource("CircleShape2D_cfb7h")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = -40.0
+offset_top = -80.0
+offset_right = 40.0
+offset_bottom = -61.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="ProgressBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "10/10"
+horizontal_alignment = 1

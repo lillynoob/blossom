@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Character" load_steps=3 format=3 uid="uid://4pskofvthax5"]
+
+[ext_resource type="Script" uid="uid://1ayrphufvkxc" path="res://characters/characterResource.gd" id="1_jhnme"]
+[ext_resource type="Resource" uid="uid://bra6d7f68cyso" path="res://battles/battlers/party/poppy.tres" id="1_oqepb"]
+
+[resource]
+script = ExtResource("1_jhnme")
+name = "Poppy"
+battler = ExtResource("1_oqepb")
+metadata/_custom_type_script = "uid://1ayrphufvkxc"

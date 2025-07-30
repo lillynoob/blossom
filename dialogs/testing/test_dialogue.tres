@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Dialog" load_steps=6 format=3 uid="uid://bukmmlyeq4rmf"]
+
+[ext_resource type="Script" uid="uid://7gosquon4x85" path="res://dialogs/dialog.gd" id="1_dh1vw"]
+[ext_resource type="Texture2D" uid="uid://daxikoxgnird4" path="res://style/susiefaces.png" id="1_sunvd"]
+[ext_resource type="AudioStream" uid="uid://bog6fimnyucvc" path="res://dialogs/voices/SND_TXT1.wav" id="3_b71u3"]
+[ext_resource type="AudioStream" uid="uid://ddslmsp8u1xic" path="res://dialogs/voices/snd_txtsus.wav" id="4_m1nn6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5a75"]
+atlas = ExtResource("1_sunvd")
+region = Rect2(555, 61, 45, 51)
+
+[resource]
+script = ExtResource("1_dh1vw")
+scene_script = PackedStringArray("\"hi squidward\"", "uh what the fuck.")
+character_script = [null, SubResource("AtlasTexture_r5a75")]
+voice_script = [ExtResource("3_b71u3"), ExtResource("4_m1nn6")]
+is_choice = false
+choices = PackedStringArray()
+choice_scenes = []
+metadata/_custom_type_script = "uid://7gosquon4x85"

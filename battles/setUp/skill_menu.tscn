@@ -1,0 +1,133 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdxhsjt0obdch"]
+
+[ext_resource type="Script" uid="uid://1xae8jxock1x" path="res://skill_menu.gd" id="1_1qrar"]
+[ext_resource type="Script" uid="uid://14waji6avgco" path="res://battles/setUp/optionSkill.gd" id="2_46wwh"]
+[ext_resource type="Texture2D" uid="uid://dijp17r4ibylo" path="res://icon.svg" id="3_46wwh"]
+
+[sub_resource type="Curve2D" id="Curve2D_46wwh"]
+_data = {
+"points": PackedVector2Array(132.007, 0, -132.007, 0, 0, -128, 0, 0, 0, 0, -128, 0, -130.393, 0, 130.393, 0, 0, 128, 0, 0, 0, 0, 128, 0, 129.222, -0.424098, -129.222, 0.424098, 0, -128)
+}
+point_count = 5
+
+[node name="SkillMenu" type="Node2D"]
+z_index = 5
+script = ExtResource("1_1qrar")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_46wwh")
+
+[node name="Blue" type="PathFollow2D" parent="Path2D"]
+position = Vector2(0, -128)
+rotates = false
+script = ExtResource("2_46wwh")
+
+[node name="TextureRect" type="TextureRect" parent="Path2D/Blue"]
+modulate = Color(0.560784, 0.560784, 0.560784, 1)
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+pivot_offset = Vector2(40, 40)
+texture = ExtResource("3_46wwh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Yellow" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-128.007, -0.35269)
+progress = 203.861
+rotates = false
+script = ExtResource("2_46wwh")
+
+[node name="TextureRect" type="TextureRect" parent="Path2D/Yellow"]
+modulate = Color(0.560784, 0.560784, 0.560784, 1)
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+pivot_offset = Vector2(40, 40)
+texture = ExtResource("3_46wwh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Green" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-0.367519, 128)
+progress = 407.722
+rotates = false
+script = ExtResource("2_46wwh")
+
+[node name="TextureRect" type="TextureRect" parent="Path2D/Green"]
+modulate = Color(0.560784, 0.560784, 0.560784, 1)
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+pivot_offset = Vector2(40, 40)
+texture = ExtResource("3_46wwh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Red" type="PathFollow2D" parent="Path2D"]
+position = Vector2(128.003, 0.25294)
+progress = 611.583
+rotates = false
+script = ExtResource("2_46wwh")
+
+[node name="TextureRect" type="TextureRect" parent="Path2D/Red"]
+modulate = Color(0.560784, 0.560784, 0.560784, 1)
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+pivot_offset = Vector2(40, 40)
+texture = ExtResource("3_46wwh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = -64.0
+offset_top = -208.0
+offset_right = 64.0
+offset_bottom = -176.0
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+show_behind_parent = true
+layout_mode = 2
+color = Color(0, 0, 0, 0.619608)
+
+[node name="leftButton" type="Button" parent="."]
+offset_left = -128.0
+offset_top = -160.0
+offset_right = -64.0
+offset_bottom = -96.0
+focus_mode = 0
+text = "<--"
+
+[node name="rightButton" type="Button" parent="."]
+offset_left = 64.0
+offset_top = -160.0
+offset_right = 128.0
+offset_bottom = -96.0
+focus_mode = 0
+text = "-->"
+
+[node name="mouseSelect" type="TextureButton" parent="."]
+offset_left = -32.0
+offset_top = -160.0
+offset_right = 32.0
+offset_bottom = -96.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="leftButton" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="rightButton" to="." method="_on_right_button_pressed"]
+[connection signal="pressed" from="mouseSelect" to="." method="_on_mouse_select_pressed"]

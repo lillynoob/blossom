@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2787808aphbh"]
+
+[ext_resource type="Script" uid="uid://roxhg3h4vppe" path="res://battles/skills/skillSpawnScript.gd" id="1_x3sie"]
+[ext_resource type="Texture2D" uid="uid://bho6qsrad8m8w" path="res://SAMPLE_DO_NOT_USE/sample/battle/shieldprotea.png" id="2_5gtu6"]
+
+[node name="BasicWall" type="Node2D"]
+z_index = 6
+script = ExtResource("1_x3sie")
+skill_name = "Wall Spawn"
+icon = ExtResource("2_5gtu6")

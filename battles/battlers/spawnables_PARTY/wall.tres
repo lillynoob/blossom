@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Battler" load_steps=4 format=3 uid="uid://djjct0ha16mxl"]
+
+[ext_resource type="PackedScene" uid="uid://nmlm7uv1keuw" path="res://rigs/battlers/party/SHIELD.tscn" id="1_jbuu5"]
+[ext_resource type="Script" uid="uid://dxp0ljea0u320" path="res://battles/battlers/battlerResource.gd" id="2_egdl6"]
+[ext_resource type="PackedScene" uid="uid://c6js8oxhe5ius" path="res://battles/skills/attacks/BASIC_HAT.tscn" id="4_govkq"]
+
+[resource]
+script = ExtResource("2_egdl6")
+name = "Wall"
+is_enemy = false
+rig = ExtResource("1_jbuu5")
+skills = [ExtResource("4_govkq"), ExtResource("4_govkq"), ExtResource("4_govkq"), ExtResource("4_govkq")]
+MAX_HP = 50
+MAX_MP = 10
+metadata/_custom_type_script = "uid://dxp0ljea0u320"

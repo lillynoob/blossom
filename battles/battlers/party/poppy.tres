@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Battler" load_steps=4 format=3 uid="uid://bra6d7f68cyso"]
+
+[ext_resource type="Script" uid="uid://dxp0ljea0u320" path="res://battles/battlers/battlerResource.gd" id="1_lw77p"]
+[ext_resource type="PackedScene" uid="uid://utsce6rfor02" path="res://rigs/battlers/party/poppyBattlerRig.tscn" id="1_rc5ot"]
+[ext_resource type="PackedScene" uid="uid://c6js8oxhe5ius" path="res://battles/skills/attacks/BASIC_HAT.tscn" id="3_lpc81"]
+
+[resource]
+script = ExtResource("1_lw77p")
+name = "Poppy"
+is_enemy = false
+rig = ExtResource("1_rc5ot")
+skills = [ExtResource("3_lpc81"), ExtResource("3_lpc81"), ExtResource("3_lpc81"), ExtResource("3_lpc81")]
+MAX_HP = 1
+MAX_MP = 10
+metadata/_custom_type_script = "uid://dxp0ljea0u320"

@@ -1,0 +1,111 @@
+[gd_scene load_steps=9 format=3 uid="uid://cx0x2jcddx2wh"]
+
+[ext_resource type="Script" uid="uid://cdfkxci6vl187" path="res://dialogs/choice_textbox.gd" id="1_m5qnf"]
+[ext_resource type="Texture2D" uid="uid://clmpnn6mxwwmd" path="res://style/lightworldTXTBOX.png" id="3_fnviv"]
+[ext_resource type="Theme" uid="uid://ct6gk3ystmcvg" path="res://style/textbox.tres" id="4_k4j8a"]
+[ext_resource type="Texture2D" uid="uid://djjmlrbnxqhfu" path="res://style/soulsmall.png" id="4_oilk4"]
+[ext_resource type="Texture2D" uid="uid://daxikoxgnird4" path="res://style/susiefaces.png" id="5_sqk5v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oilk4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k4j8a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pwef"]
+atlas = ExtResource("5_sqk5v")
+region = Rect2(5, 61, 45, 51)
+
+[node name="Choice_box" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_top = -240.0
+offset_right = -320.0
+offset_bottom = -240.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m5qnf")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 304.0
+offset_right = 632.0
+offset_bottom = 472.0
+texture = ExtResource("3_fnviv")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 584.0
+offset_bottom = 134.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="TextureRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+focus_neighbor_left = NodePath("../Button2")
+focus_neighbor_right = NodePath("../Button2")
+theme = ExtResource("4_k4j8a")
+theme_override_colors/font_hover_pressed_color = Color(0.984314, 0.952941, 0.00392157, 1)
+theme_override_colors/font_hover_color = Color(0.984314, 0.952941, 0.00392157, 1)
+theme_override_colors/font_focus_color = Color(0.984314, 0.952941, 0.00392157, 1)
+theme_override_colors/font_pressed_color = Color(0.984314, 0.952941, 0.00392157, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oilk4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_oilk4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_oilk4")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_oilk4")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_oilk4")
+text = " Choice 1"
+flat = true
+alignment = 0
+
+[node name="Button2" type="Button" parent="TextureRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+focus_neighbor_left = NodePath("../Button")
+focus_neighbor_right = NodePath("../Button")
+theme = ExtResource("4_k4j8a")
+theme_override_colors/font_hover_pressed_color = Color(0.984314, 0.952941, 0.00392157, 1)
+theme_override_colors/font_hover_color = Color(0.984314, 0.952941, 0.00392157, 1)
+theme_override_colors/font_focus_color = Color(0.984314, 0.952941, 0.00392157, 1)
+theme_override_colors/font_pressed_color = Color(0.984314, 0.952941, 0.00392157, 1)
+theme_override_constants/line_spacing = -22
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k4j8a")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_k4j8a")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_k4j8a")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_k4j8a")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_k4j8a")
+text = " Choice 2"
+flat = true
+alignment = 2
+
+[node name="Soul" type="Sprite2D" parent="TextureRect/MarginContainer/HBoxContainer"]
+position = Vector2(280, 56)
+scale = Vector2(2, 2)
+texture = ExtResource("4_oilk4")
+
+[node name="charPortrait" type="TextureRect" parent="TextureRect"]
+visible = false
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 136.0
+offset_bottom = 143.0
+texture = SubResource("AtlasTexture_3pwef")
+stretch_mode = 5
+
+[node name="Txt_Timer" type="Timer" parent="."]
+wait_time = 0.033
+one_shot = true
+autostart = true
+
+[connection signal="focus_entered" from="TextureRect/MarginContainer/HBoxContainer/Button" to="." method="_on_button_focus_entered"]
+[connection signal="pressed" from="TextureRect/MarginContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="focus_entered" from="TextureRect/MarginContainer/HBoxContainer/Button2" to="." method="_on_button_2_focus_entered"]
+[connection signal="pressed" from="TextureRect/MarginContainer/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="timeout" from="Txt_Timer" to="." method="_on_txt_timer_timeout"]

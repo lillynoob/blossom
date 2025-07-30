@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpg1j1bl02sxr"]
+
+[ext_resource type="Texture2D" uid="uid://7ntrmvp7dmmu" path="res://SAMPLE_DO_NOT_USE/space.png" id="1_ose4r"]
+
+[node name="Space" type="TextureButton"]
+offset_right = 128.0
+offset_bottom = 128.0
+size_flags_horizontal = 3
+texture_normal = ExtResource("1_ose4r")
+stretch_mode = 5

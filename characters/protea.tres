@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Character" load_steps=3 format=3 uid="uid://dxdf6j6wawepb"]
+
+[ext_resource type="Resource" uid="uid://7pv8ug5qkyas" path="res://battles/battlers/party/protea.tres" id="1_4phs4"]
+[ext_resource type="Script" uid="uid://1ayrphufvkxc" path="res://characters/characterResource.gd" id="2_2fbkw"]
+
+[resource]
+script = ExtResource("2_2fbkw")
+name = "Protea"
+battler = ExtResource("1_4phs4")
+metadata/_custom_type_script = "uid://1ayrphufvkxc"

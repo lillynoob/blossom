@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6js8oxhe5ius"]
+
+[ext_resource type="Script" uid="uid://dnsw0cn5c5rvb" path="res://battles/skills/skillScript.gd" id="1_gkaw8"]
+[ext_resource type="Texture2D" uid="uid://dggiromwvmfxl" path="res://SAMPLE_DO_NOT_USE/sample/battle/hatTosstest.png" id="2_fx51t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fx51t"]
+radius = 24.0
+
+[node name="BasicHat" type="Node2D"]
+z_index = 6
+script = ExtResource("1_gkaw8")
+skill_name = "Hat Toss"
+direction = Vector2(1, 0)
+SPEED = -4.0
+ACCEL = 0.1
+icon = ExtResource("2_fx51t")
+is_position_based_on_char = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_fx51t")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_fx51t")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

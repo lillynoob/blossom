@@ -1,0 +1,245 @@
+[gd_scene load_steps=10 format=3 uid="uid://ba56r2gh7443m"]
+
+[ext_resource type="Texture2D" uid="uid://djpxqacwwo7is" path="res://style/battle_stuffs/characterhuds/kris.png" id="1_c137c"]
+[ext_resource type="FontFile" uid="uid://cge6mrut6doex" path="res://style/battle_stuffs/characterhuds/Vaticanus-G3yVG.ttf" id="2_0sf5g"]
+[ext_resource type="Script" uid="uid://dnt4bel4vtlo0" path="res://style/battle_stuffs/characterhuds/player_info_bar.gd" id="2_5ssk0"]
+[ext_resource type="Texture2D" uid="uid://dhchpk8n3qypo" path="res://style/battle_stuffs/characterhuds/hpbar/HP red.png" id="3_x05cd"]
+[ext_resource type="Texture2D" uid="uid://dqrplw8utnlry" path="res://style/battle_stuffs/characterhuds/hpbar/krisHP.png" id="4_5ssk0"]
+[ext_resource type="Texture2D" uid="uid://crwdjltw450r7" path="res://style/battle_stuffs/characterhuds/kris_highlight.png" id="5_x05cd"]
+
+[sub_resource type="Animation" id="Animation_5ssk0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D3:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 34)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D4:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D4:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(106, 34)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D4:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_x05cd"]
+resource_name = "selected"
+length = 1.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D3:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.5, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 34), Vector2(53, 34)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0666667, 0.9, 1.36667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D4:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D4:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 34), Vector2(106, 34)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D4:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.0333333, 0.6, 1.36667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dr8ob"]
+_data = {
+&"RESET": SubResource("Animation_5ssk0"),
+&"selected": SubResource("Animation_x05cd")
+}
+
+[node name="partyInfoShower" type="TextureRect"]
+custom_minimum_size = Vector2(212, 0)
+offset_right = 212.0
+offset_bottom = 36.0
+texture = ExtResource("1_c137c")
+stretch_mode = 2
+script = ExtResource("2_5ssk0")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 0
+offset_right = 212.0
+offset_bottom = 69.0
+color = Color(0, 0, 0, 1)
+
+[node name="Cur_HP" type="Label" parent="."]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 6.0
+offset_right = 159.0
+offset_bottom = 22.0
+theme_override_fonts/font = ExtResource("2_0sf5g")
+theme_override_font_sizes/font_size = 16
+text = "90"
+horizontal_alignment = 2
+
+[node name="Max_HP" type="Label" parent="."]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 6.0
+offset_right = 204.0
+offset_bottom = 22.0
+theme_override_fonts/font = ExtResource("2_0sf5g")
+theme_override_font_sizes/font_size = 16
+text = "90"
+horizontal_alignment = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 22.0
+offset_right = 203.0
+offset_bottom = 32.0
+texture_under = ExtResource("3_x05cd")
+texture_progress = ExtResource("4_5ssk0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0.635294, 0.909804, 1)
+position = Vector2(2, 0)
+scale = Vector2(0.981132, 1)
+texture = ExtResource("5_x05cd")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D"]
+self_modulate = Color(0, 0.635294, 0.909804, 1)
+position = Vector2(0, 34)
+texture = ExtResource("5_x05cd")
+centered = false
+
+[node name="Sprite2D3" type="Sprite2D" parent="Sprite2D"]
+self_modulate = Color(0, 0.635294, 0.909804, 1)
+position = Vector2(0, 34)
+texture = ExtResource("5_x05cd")
+centered = false
+
+[node name="Sprite2D4" type="Sprite2D" parent="Sprite2D"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(0, 0.635294, 0.909804, 1)
+position = Vector2(106, 34)
+scale = Vector2(1e-05, 1)
+texture = ExtResource("5_x05cd")
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_dr8ob")
+}

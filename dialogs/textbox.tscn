@@ -1,0 +1,80 @@
+[gd_scene load_steps=8 format=3 uid="uid://dnntqtaunowls"]
+
+[ext_resource type="Script" uid="uid://b3vxhic4c1tto" path="res://dialogs/textbox.gd" id="1_88vyv"]
+[ext_resource type="Texture2D" uid="uid://clmpnn6mxwwmd" path="res://style/lightworldTXTBOX.png" id="1_vng66"]
+[ext_resource type="Resource" uid="uid://bukmmlyeq4rmf" path="res://dialogs/testing/test_dialogue.tres" id="2_h3cug"]
+[ext_resource type="Theme" uid="uid://ct6gk3ystmcvg" path="res://style/textbox.tres" id="4_586ua"]
+[ext_resource type="Texture2D" uid="uid://daxikoxgnird4" path="res://style/susiefaces.png" id="4_b4wmp"]
+[ext_resource type="AudioStream" uid="uid://bog6fimnyucvc" path="res://dialogs/voices/SND_TXT1.wav" id="6_h3cug"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pwef"]
+atlas = ExtResource("4_b4wmp")
+region = Rect2(5, 61, 45, 51)
+
+[node name="Control" type="Control"]
+z_index = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_top = -240.0
+offset_right = -320.0
+offset_bottom = -240.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_88vyv")
+dialog = ExtResource("2_h3cug")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 616.0
+offset_right = 1448.0
+offset_bottom = 872.0
+texture = ExtResource("1_vng66")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
+clip_contents = true
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 1088.0
+offset_bottom = 240.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/MarginContainer"]
+clip_contents = false
+layout_mode = 2
+theme = ExtResource("4_586ua")
+theme_override_constants/line_separation = -12
+bbcode_enabled = true
+text = "The gash weaves down as if it were to cry. 
+
+[shake][wave][tornado]AHAHAHAHAHAHAHAAHAH HHAHAHAHAHAHAHAHAAHAHAHAHAAHAHAH"
+scroll_active = false
+justification_flags = 0
+visible_characters_behavior = 1
+
+[node name="charPortrait" type="TextureRect" parent="TextureRect"]
+visible = false
+layout_mode = 0
+offset_left = 16.0
+offset_top = -320.0
+offset_right = 288.0
+offset_bottom = -30.0
+texture = SubResource("AtlasTexture_3pwef")
+stretch_mode = 5
+
+[node name="Txt_Timer" type="Timer" parent="."]
+wait_time = 0.033
+one_shot = true
+autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(896, 568)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_h3cug")
+volume_db = -15.0
+
+[connection signal="timeout" from="Txt_Timer" to="." method="_on_txt_timer_timeout"]

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Dialog" load_steps=3 format=3 uid="uid://crvhjvnaale64"]
+
+[ext_resource type="Script" uid="uid://7gosquon4x85" path="res://dialogs/dialog.gd" id="1_ipgy6"]
+[ext_resource type="AudioStream" uid="uid://bog6fimnyucvc" path="res://dialogs/voices/SND_TXT1.wav" id="2_64315"]
+
+[resource]
+script = ExtResource("1_ipgy6")
+scene_script = PackedStringArray("You chose Choice 2.")
+character_script = [null]
+voice_script = [ExtResource("2_64315")]
+is_choice = false
+choices = PackedStringArray()
+choice_scenes = []
+metadata/_custom_type_script = "uid://7gosquon4x85"

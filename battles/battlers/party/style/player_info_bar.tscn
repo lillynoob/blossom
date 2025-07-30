@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://duf6cwxuvdt73"]
+
+[ext_resource type="PackedScene" uid="uid://ba56r2gh7443m" path="res://style/battle_stuffs/characterhuds/player_info_bar.tscn" id="1_qs2no"]
+[ext_resource type="Texture2D" uid="uid://det17jt52mua1" path="res://style/battle_stuffs/characterhuds/hpbar/inbetween.png" id="2_7vht7"]
+
+[node name="PlayerInfoBar" type="Control"]
+custom_minimum_size = Vector2(640, 38)
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 38.0
+size_flags_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="partyInfoShower2" parent="HBoxContainer" instance=ExtResource("1_qs2no")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 36.0
+texture = ExtResource("2_7vht7")

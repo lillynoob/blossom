@@ -1,0 +1,206 @@
+[gd_scene load_steps=7 format=3 uid="uid://ni7yeyjxo7yw"]
+
+[ext_resource type="Script" uid="uid://dnsw0cn5c5rvb" path="res://battles/skills/skillScript.gd" id="1_nt6kp"]
+[ext_resource type="Texture2D" uid="uid://dggiromwvmfxl" path="res://SAMPLE_DO_NOT_USE/sample/battle/hatTosstest.png" id="2_umj6x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fx51t"]
+radius = 24.0
+
+[sub_resource type="Animation" id="Animation_umj6x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Hat2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-128, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Hat3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-128, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nt6kp"]
+resource_name = "start"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-128, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_becomeReady"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Hat2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-64, -128)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Hat2")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_becomeReady"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Hat3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-64, 128)]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Hat3")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_becomeReady"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3o7ny"]
+_data = {
+&"RESET": SubResource("Animation_umj6x"),
+&"start": SubResource("Animation_nt6kp")
+}
+
+[node name="BasicHat" type="Node2D"]
+z_index = 6
+script = ExtResource("1_nt6kp")
+skill_name = "Triple Hat Toss"
+direction = Vector2(1, 0)
+SPEED = -4.0
+ACCEL = 0.1
+readyUp = false
+icon = ExtResource("2_umj6x")
+is_position_based_on_char = true
+
+[node name="Hat1" type="Node2D" parent="."]
+script = ExtResource("1_nt6kp")
+direction = Vector2(1, 0)
+SPEED = -4.0
+ACCEL = 0.1
+readyUp = false
+
+[node name="Area2D" type="Area2D" parent="Hat1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hat1/Area2D"]
+shape = SubResource("CircleShape2D_fx51t")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hat1/Area2D"]
+scale = Vector2(2, 2)
+texture = ExtResource("2_umj6x")
+
+[node name="Hat2" type="Node2D" parent="."]
+position = Vector2(-128, 0)
+script = ExtResource("1_nt6kp")
+direction = Vector2(1, 0)
+SPEED = -4.0
+ACCEL = 0.1
+readyUp = false
+
+[node name="Area2D" type="Area2D" parent="Hat2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hat2/Area2D"]
+shape = SubResource("CircleShape2D_fx51t")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hat2/Area2D"]
+scale = Vector2(2, 2)
+texture = ExtResource("2_umj6x")
+
+[node name="Hat3" type="Node2D" parent="."]
+position = Vector2(-128, 0)
+script = ExtResource("1_nt6kp")
+direction = Vector2(1, 0)
+SPEED = -4.0
+ACCEL = 0.1
+readyUp = false
+
+[node name="Area2D" type="Area2D" parent="Hat3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hat3/Area2D"]
+shape = SubResource("CircleShape2D_fx51t")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hat3/Area2D"]
+scale = Vector2(2, 2)
+texture = ExtResource("2_umj6x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Hat1")
+libraries = {
+&"": SubResource("AnimationLibrary_3o7ny")
+}
+autoplay = "start"
+
+[connection signal="area_entered" from="Hat1/Area2D" to="Hat1" method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Hat2/Area2D" to="Hat2" method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Hat3/Area2D" to="Hat3" method="_on_area_2d_area_entered"]
