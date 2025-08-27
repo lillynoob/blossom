@@ -188,6 +188,7 @@ func _on_move_pressed() -> void:
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("movement") and !IS_MOVEMENT_OCCURING and $Control/Buttons/VBoxContainer/Movement.disabled == false:
+		battleCursor.mouse_mode = false
 		_on_move_pressed()
 		
 func _checkEnemyDeathStatus():

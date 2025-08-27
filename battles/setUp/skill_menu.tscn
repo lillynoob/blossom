@@ -15,10 +15,12 @@ z_index = 5
 script = ExtResource("1_1qrar")
 
 [node name="Path2D" type="Path2D" parent="."]
+scale = Vector2(0.75, 0.75)
 curve = SubResource("Curve2D_46wwh")
 
 [node name="Blue" type="PathFollow2D" parent="Path2D"]
 position = Vector2(0, -128)
+scale = Vector2(1.25, 1.25)
 rotates = false
 script = ExtResource("2_46wwh")
 
@@ -28,13 +30,16 @@ offset_left = -40.0
 offset_top = -40.0
 offset_right = 40.0
 offset_bottom = 40.0
+scale = Vector2(1.25, 1.25)
 pivot_offset = Vector2(40, 40)
 texture = ExtResource("3_46wwh")
 expand_mode = 1
 stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="Yellow" type="PathFollow2D" parent="Path2D"]
 position = Vector2(-128.007, -0.35269)
+scale = Vector2(1.25, 1.25)
 progress = 203.861
 rotates = false
 script = ExtResource("2_46wwh")
@@ -45,13 +50,16 @@ offset_left = -40.0
 offset_top = -40.0
 offset_right = 40.0
 offset_bottom = 40.0
+scale = Vector2(1.25, 1.25)
 pivot_offset = Vector2(40, 40)
 texture = ExtResource("3_46wwh")
 expand_mode = 1
 stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="Green" type="PathFollow2D" parent="Path2D"]
 position = Vector2(-0.367519, 128)
+scale = Vector2(1.25, 1.25)
 progress = 407.722
 rotates = false
 script = ExtResource("2_46wwh")
@@ -62,13 +70,16 @@ offset_left = -40.0
 offset_top = -40.0
 offset_right = 40.0
 offset_bottom = 40.0
+scale = Vector2(1.25, 1.25)
 pivot_offset = Vector2(40, 40)
 texture = ExtResource("3_46wwh")
 expand_mode = 1
 stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="Red" type="PathFollow2D" parent="Path2D"]
 position = Vector2(128.003, 0.25294)
+scale = Vector2(1.25, 1.25)
 progress = 611.583
 rotates = false
 script = ExtResource("2_46wwh")
@@ -90,9 +101,9 @@ one_shot = true
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 offset_left = -64.0
-offset_top = -208.0
+offset_top = -160.0
 offset_right = 64.0
-offset_bottom = -176.0
+offset_bottom = -128.0
 
 [node name="Label" type="Label" parent="MarginContainer"]
 layout_mode = 2
@@ -106,18 +117,18 @@ layout_mode = 2
 color = Color(0, 0, 0, 0.619608)
 
 [node name="leftButton" type="Button" parent="."]
-offset_left = -128.0
-offset_top = -160.0
+offset_left = -112.0
+offset_top = -120.0
 offset_right = -64.0
-offset_bottom = -96.0
+offset_bottom = -72.0
 focus_mode = 0
 text = "<--"
 
 [node name="rightButton" type="Button" parent="."]
 offset_left = 64.0
-offset_top = -160.0
-offset_right = 128.0
-offset_bottom = -96.0
+offset_top = -120.0
+offset_right = 112.0
+offset_bottom = -72.0
 focus_mode = 0
 text = "-->"
 
